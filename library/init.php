@@ -20,5 +20,5 @@ include_once "model/artists.php";
 
 // ouvrir la BDD dans la variable globale $bdd
 global $bdd;
-$bdd = new PDO("mysql:host=172.18.0.1;dbname=cdms-juha;charset=UTF8", "cdms-juha", "P*20ugbgni");
+$bdd = new PDO("chaine de connection");
 $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING) ;

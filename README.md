@@ -16,8 +16,12 @@ La messagerie propose des notifications temps réel et la gestion des messages n
 Chaque utilisateur peut modifier son profil et choisir de recevoir les messages par e-mail.
 L’objectif : simplifier et dynamiser l’organisation de concerts vivants, accessibles à tous.
 
+## Important
+>Le projet utilise des identifiants (login et mot de passe) pour accéder à une base de données. Ceux-ci sont volontairement masqués pour des raisons de sécurité. Veuillez me contacter si vous souhaitez effectuer des tests.
+
 ## Author
 
 👤 **Julien - Promo 2025**
 
-
+* Github: [@JHGit-hub](https://github.com/JHGit-hub)
+* LinkedIn: [@julien-hardy-16a648367](https://linkedin.com/in/julien-hardy-16a648367)
