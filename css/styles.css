@@ -1,0 +1,118 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+main{
+    width:70%;
+    display: flex;
+    flex-direction: column;
+    gap:2rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.artists_filtered{
+    flex-direction: column;
+    border-radius: 4px;
+    border: solid 1px;
+    border-color: black;
+    padding:0.5rem 1rem;
+}
+
+.liste_conv, .conv_artist{
+    flex-direction: row;
+}
+
+.conv {
+    border: 6px solid transparent; /* Bordure épaisse mais transparente */
+    border-radius: 12px;
+    background: 
+        linear-gradient(white, white) padding-box,
+        linear-gradient(135deg, rgb(180, 240, 180), rgb(125, 208, 125), rgb(97, 183, 183)) border-box;
+    padding: 0.5rem 1rem;
+    width: 400px;
+    margin-bottom: 2rem;
+}
+
+.unread{
+    background: 
+    linear-gradient(white, white) padding-box,
+    linear-gradient(135deg, #ffcccc, #ff0000, #ffcccc) border-box;
+}
+
+.date{
+    font-size: 0.7rem;
+}
+.form{
+    flex-direction: column;
+    gap:2rem;
+}
+
+#liste, #conversation, #detail_artist{
+    padding:2rem;
+    border: solid 1px;
+    border-color: black;
+    border-radius: 5px;
+    width:48%;
+    height: 700px;
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    gap:2rem;
+}
+
+
+.msg_list{
+    display:flex;
+    flex-direction: column;
+    overflow-y: auto;
+    height:65%;
+}
+
+.form_msg{
+    position: fixed;
+}
+
+table{
+    border-collapse: collapse;
+}
+
+table td, table th{
+    border: 1px solid grey;
+    padding: 3px;
+}
+
+.msg_left{
+    align-self: flex-start;
+}
+
+.msg_right{
+    align-self: flex-end;
+}
+
+.msg_receive{
+    padding: 0.5rem 1rem;
+    border: solid 4px;
+    border-radius: 10px;
+    border-color: rgb(25, 186, 25);
+    text-align: left;
+    width:fit-content;
+}
+
+.msg_send{
+    padding: 0.5rem 1rem;
+    border: solid 4px;
+    border-radius: 10px;
+    border-color:rgb(14, 177, 177);
+    text-align: right;
+    width:fit-content;
+}
+
+.date_msg{
+    font-size: 0.6rem;
+    color:grey;
+    font-style: italic;
+}
