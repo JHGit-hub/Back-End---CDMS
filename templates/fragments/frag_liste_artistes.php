@@ -11,10 +11,17 @@ Paramétres :
 */
 
 ?>
-<div class="artists_filtered">
-    <h3><?= htmlentities($artiste->get("group_name")) ?></h3>
-    <p><u>Présentation</u> : <?= htmlentities($artiste->get("presentation")) ?></p>
+
+<?php
+    foreach($liste_artistes_filtres as $artiste){
+    ?>
+    <div class="artists_filtered">
+    <h3><?= htmlspecialchars($artiste->get("group_name")) ?></h3>
+    <p><u>Présentation</u> : <?= htmlspecialchars($artiste->get("presentation")) ?></p>
     <a href="extraire_fiche_artiste.php?id=<?= $artiste->id() ?>&user_id=<?= $artiste->get("user_id") ?>">
         <button>Voir la fiche</button>
     </a>
-</div>
+    </div>
+    <?php
+    }
+?>

@@ -4,10 +4,11 @@
 
 controleur ajax
 
-rôle : extraire les conversations avec la MAJ et péparer son affichage
+rôle : extraire les messages de la conversation avec la MAJ et péparer son affichage
 paramétre: 
-            contact_id : id du correspondant
-            contact_role ; role du correspondant
+        par methode $_GET:
+            $contact_id : id du correspondant
+            $contact_role ; role du correspondant
 
 Retour : un fragment HTML (DIV)
 

@@ -16,12 +16,15 @@ function recupererConversation(divConv, contact_id, contact_role){
     // rôle :   demander au serveur les messages avec le correspondant
     //          retirer la classe unread a la division cliquée
     // paramètre:
+    //          divConv: div cliqué dans la liste des conversations, ou null si appelé sans div
     //          contact_id: id du correspondant
     //          contact_role : role du correspondant
     // retour: renvoi la conversation sous forme de text hmtl vers afficherConversation()
 
-    // Retirer la classe unread sur le div cliqué
-    divConv.classList.remove('unread');
+    // Retirer la classe unread sur la div cliquée
+    if(divConv){
+        divConv.classList.remove('unread');
+    }
 
     // Construire l'URL a appeler
     let url = "ajax_recuperer_detail_conversation.php?contact_id=" + contact_id + "&contact_role=" + contact_role;
@@ -38,7 +41,8 @@ function recupererConversation(divConv, contact_id, contact_role){
 
 function afficherConversation(fragment){
     // rôle : affiche dans le cadre  #conversation le contenu html reçu
-    // paramètre : fragment; code HTML à afficher
+    // paramètre : 
+    //          fragment; code HTML à afficher
     // retour: néant
 
     document.getElementById("conversation").innerHTML = fragment;
@@ -59,9 +63,9 @@ function afficherConversation(fragment){
 function VerifConversation(artist_id){
     // rôle : demander au serveur si la la conversation avec l'artiste existe
     // paramètre: 
-    //          $artist_id; id de l'artiste avec qui on veut converser
-    // retour: si existe: renvoi la conversation sous forme de text hmtl vers recupererConversation()
-    //          sinon: renvoi vers nouvelleConversation()
+    //          artist_id; id de l'artiste avec qui on veut converser
+    // retour: si existe: affiche la conversation avec l'artiste
+    //          sinon: crée une nouvelle conversation avec cet artiste
 
 
     // On construit l'url a appeler
@@ -80,7 +84,7 @@ function VerifConversation(artist_id){
         // Verification de l'existance de la conversation
         if (data.existe) {
             // Le conversation existe
-            recupererConversation(data.contact_id, "artist"); //On sait que le contact est un artiste car 
+            recupererConversation(null, data.contact_id, "artist"); //On sait que le contact est un artiste car 
             // seul les organisateurs peuvent créer une nouvelle discution
         } else {
             // La conversation n'existe pas
@@ -94,7 +98,7 @@ function nouvelleConversation(user_id){
     // rôle : créer une nouvelle conversation
     // paramètre:
     //          user_id: id de l'artiste dans la table User
-    // retour: créer un fragment vide pour à afficher
+    // retour: créer un fragment vide à afficher pour la nouvelle conversation
 
     // Construire l'URL a appeler
     let url = "ajax_afficher_nouvelle_conversation.php?user_id=" + user_id;
@@ -109,9 +113,11 @@ function nouvelleConversation(user_id){
 
 function nouveauMessage(event){
     // rôle : demander au serveur d'enregistrer le nouveau message
-    // paramètre : contact_id du correspondant
-    //              texte du message
+    // paramètre : 
+    //              contact_id : id du correspondant
+    //              message : texte du message
     // retour : néant
+
     event.preventDefault(); // on empeche l'envoi du formulaire 
     // On recupére le message dans le form et l'id du correspondant
     const message = document.querySelector('textarea[name="message"]').value;
@@ -136,6 +142,10 @@ function nouveauMessage(event){
 }
 
 function afficherMotDePasse(){
+    // rôle : afficher le champ du mot de passe dans le formulaire pour permettre sa modification
+    // paramètre
+    //          néant
+    // retour : néant
     document.getElementById("modifPassword").style.display = "block";
 }
 
@@ -162,7 +172,8 @@ function majListeConversation() {
 function majMessages() {
     // rôle: mettre a jour la liste des messages de la conversation toutes les 2 secondes ou manuellement a l'envoi d'un message
     // paramètre: 
-    //           néant
+    //           contact_id : id du correspondant
+    //           contact_role: role du contact
     // retour: renvoi vers le HTML avec la mise a jour dans le framgent frag_msg_conversations 
 
     let msgList = document.getElementById("msg_list");

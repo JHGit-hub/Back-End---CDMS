@@ -34,7 +34,7 @@ Paramétres :
             <section  id="liste_conversations">
                 <?php
                     // afficher la liste des conversations
-                    // la variable $liste_conversations est dispoible, je peux appler le fragment
+                    // la variable $liste_conversations est disponible, je peux appler le fragment
                     include "templates/fragments/frag_liste_conversations.php";
                 ?>
             </section>

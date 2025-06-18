@@ -31,24 +31,30 @@ Paramétres :
     <section>
         <h1>Modifier et valider pour quitter</h1>
         <form method="post" action="enregistrer_modif_fiche_organisateur.php">
-            <label for="name">
+            <label for="name">Nom :
                 <input type="text" name="name" id="name" value="<?= htmlspecialchars($user->get("name")) ?>">
-            </label><br><br>
-            <label for="email">
+            </label>
+            <br><br>
+            <label for="email">Email :
                 <input type="text" name="email" id="email" value="<?= htmlspecialchars($user->get("email")) ?>">
-            </label><br><br>
-            <button type="button" onclick="afficherMotDePasse()">Modifier le mot de passe</button><br><br>
+            </label>
+            <br><br>
+            <button type="button" onclick="afficherMotDePasse()">Modifier le mot de passe</button>
+            <br><br>
             <div id="modifPassword" style="display: none;">
                 <label for="password">Nouveau mot de passe :
                     <input type="password" name="password" id="password" value="">
-                </label><br><br>
+                </label>
+                <br><br>
             </div>
-            <label for="city">
-                <input type="texte" id="city" name="city" value="<?= htmlspecialchars($organizer->get("city")) ?>"><br><br>
-            </label><br><br>
-            <label for="place_description">
-                <textarea id="place_description" id="place_description" name="place_description" rows="5" cols="40"><?= htmlspecialchars($organizer->get("place_description")) ?></textarea><br><br>
-            </label><br><br>
+            <label for="city">Ville :
+                <input type="text" id="city" name="city" value="<?= htmlspecialchars($organizer->get("city")) ?>">
+            </label>
+            <br><br>
+            <label for="place_description">Description du lieu :
+                <textarea id="place_description" name="place_description" rows="5" cols="40"><?= htmlspecialchars($organizer->get("place_description")) ?></textarea>
+            </label>
+            <br><br>
             <input type="submit" value="Valider changement"/>
         </form>
     </section>

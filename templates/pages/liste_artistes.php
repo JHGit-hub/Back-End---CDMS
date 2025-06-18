@@ -24,6 +24,10 @@ Paramétres :
         <section>
         <h1>Liste des artistes qui correspondent à votre recherche</h1>
         <?php
+            // afficher la liste des artistes filtrés
+            include "templates/fragments/frag_liste_artistes.php";
+        ?>
+        <?php
             foreach($liste_artistes_filtres as $artiste){
                 include "templates/fragments/frag_liste_artistes.php";
             };
